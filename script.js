@@ -112,7 +112,7 @@ document.body.appendChild(impact);
 
 function tryStartAudio() {
   if (audioStarted || !bgAudio) return;
-  bgAudio.currentTime = 150.8;
+  bgAudio.currentTime = 4;
   bgAudio.volume = 0.7;
   const playPromise = bgAudio.play();
   audioStarted = true;
@@ -127,7 +127,6 @@ function enterExperience() {
   if (welcome) {
     welcome.style.display = 'none';
   }
-  tryStartAudio();
 }
 
 function queueCelebrate() {
@@ -152,6 +151,7 @@ function queueCelebrate() {
 function setYesMessage() {
   response.textContent = "You're the Schlidin to my Schlipin!";
   noBtn.disabled = true;
+  tryStartAudio();
   queueCelebrate();
   if (photoInline) {
     photoInline.classList.add('swap');
