@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="welcome" id="welcome">
+      <div class="welcome-card">
+        <h1 class="welcome-title">ARCADE MAZE</h1>
+        <div class="welcome-actions">
+          <button class="btn btn-enter" id="enterBtn" type="button">Press Start</button>
+        </div>
+      </div>
+    </div>
+
+    <main class="page">
+      <div class="glow"></div>
+      <div class="paper">
+        <div class="panel">
+          <div class="panel-photo" id="photoInline">
+            <img src="IMG_3971.JPG" alt="Us" id="photoImg" />
+          </div>
+          <div class="panel-content">
+            <div class="eyebrow">A quick, honest question</div>
+            <h1>Will you be my Valentine Lady?</h1>
+            <div class="subhead">(You don't have a choice)</div>
+            <div class="actions">
+              <button class="btn btn-yes" id="yesBtn">Yes</button>
+              <button class="btn btn-no" id="noBtn">No</button>
+            </div>
+            <div class="response" id="response" aria-live="polite"></div>
+            <div class="signature">Love you more<br />Will</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <audio id="bgAudio" preload="auto">
+      <source src="dont-you-want-me.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
