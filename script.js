@@ -172,7 +172,7 @@ function setYesMessage() {
     eyebrow.textContent = '';
   }
   if (headline) {
-    headline.textContent = 'OHHHHH YEAH! (Chick, chicka-chicka)';
+    headline.innerHTML = 'OHHHHH YEAH! <span class="nowrap">(Chick, chicka-chicka)</span>';
   }
   if (subhead) {
     subhead.textContent = '';
