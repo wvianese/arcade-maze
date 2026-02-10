@@ -2,6 +2,7 @@ const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const response = document.getElementById('response');
 const bgAudio = document.getElementById('bgAudio');
+const yesAudio = document.getElementById('yesAudio');
 const welcome = document.getElementById('welcome');
 const enterBtn = document.getElementById('enterBtn');
 const photoInline = document.getElementById('photoInline');
@@ -112,8 +113,8 @@ document.body.appendChild(impact);
 
 function tryStartAudio() {
   if (audioStarted || !bgAudio) return;
-  bgAudio.currentTime = 4;
-  bgAudio.volume = 0.7;
+  bgAudio.currentTime = 150.8;
+  bgAudio.volume = 0.6;
   const playPromise = bgAudio.play();
   audioStarted = true;
   if (playPromise && typeof playPromise.catch === 'function') {
@@ -127,6 +128,7 @@ function enterExperience() {
   if (welcome) {
     welcome.style.display = 'none';
   }
+  tryStartAudio();
 }
 
 function queueCelebrate() {
@@ -151,7 +153,17 @@ function queueCelebrate() {
 function setYesMessage() {
   response.textContent = "You're the Schlidin to my Schlipin!";
   noBtn.disabled = true;
-  tryStartAudio();
+  if (bgAudio) {
+    bgAudio.pause();
+  }
+  if (yesAudio) {
+    yesAudio.currentTime = 4;
+    yesAudio.volume = 0.8;
+    const playPromise = yesAudio.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
+  }
   queueCelebrate();
   if (photoInline) {
     photoInline.classList.add('swap');
