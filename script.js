@@ -7,6 +7,9 @@ const welcome = document.getElementById('welcome');
 const enterBtn = document.getElementById('enterBtn');
 const photoInline = document.getElementById('photoInline');
 const photoImg = document.getElementById('photoImg');
+const eyebrow = document.getElementById('eyebrow');
+const headline = document.getElementById('headline');
+const subhead = document.getElementById('subhead');
 
 const noMessages = [
   "Oh? Think you can catch me?",
@@ -165,6 +168,15 @@ function setYesMessage() {
     }
   }
   queueCelebrate();
+  if (eyebrow) {
+    eyebrow.textContent = '';
+  }
+  if (headline) {
+    headline.textContent = 'OHHHHH YEAH! (Chick, chicka-chicka)';
+  }
+  if (subhead) {
+    subhead.textContent = '';
+  }
   if (photoInline) {
     photoInline.classList.add('swap');
   }
